@@ -26,7 +26,7 @@ export default function PageCombustiveis() {
     fetch("/api/combustiveis")
       .then((res) => res.json())
       .then((dados) => {
-        if (!cancelled)
+        if (!cancelled && Array.isArray(dados))
           setCombustiveis(
             dados.map((c: Combustivel & { data: string }) => ({
               ...c,
