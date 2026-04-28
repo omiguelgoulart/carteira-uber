@@ -21,3 +21,15 @@ model Viagem {
   valorTotal       Float
   criadoEm        DateTime @default(now())
 }
+
+model Combustivel {
+  id             Int      @id @default(autoincrement())
+  data           DateTime
+  combustivel    String
+  formaPagamento String
+  litros         Float
+  posto          String
+  valorTotal     Float
+  precoLitro     Float
+  criadoEm      DateTime @default(now())
+}
